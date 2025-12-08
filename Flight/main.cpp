@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QDebug>
+#include<QFile>
 
 int main(int argc, char *argv[])
 {
@@ -14,9 +15,7 @@ int main(int argc, char *argv[])
             "无法连接到服务器！\n请确保服务端已启动。");
         return -1;
     }
-    
-    qDebug() << "客户端已连接到服务器";
-    
+
     MainWindow w;
     w.show();
     return a.exec();

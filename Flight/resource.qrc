@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/styles">
+        <file>style.qss</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="flight2.png">images/fight2.png</file>
+    </qresource>
+</RCC>
