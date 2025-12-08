@@ -7,11 +7,22 @@
 #include "userprofile.h"
 #include "networkmanager.h"
 #include "protocol.h"
+#include<QFile.h>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    QFile qssFile(":/styles/style.qss");
+    if (qssFile.open(QFile::ReadOnly)) {
+        QString styleSheet = QLatin1String(qssFile.readAll());
+        this->setStyleSheet(styleSheet);  // 只影响当前窗口
+        qssFile.close();
+        qDebug()<<"成功读取文件";
+    }
+
+
 }
 MainWindow::~MainWindow()
 {
